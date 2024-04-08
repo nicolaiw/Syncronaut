@@ -22,7 +22,7 @@ namespace Syncronaut.Server
             app.MapControllers();
 
             // Configure the HTTP request pipeline.
-            app.MapGrpcService<GreeterService>();
+            app.MapGrpcService<SyncronautService>();
 
 
             app.Run();

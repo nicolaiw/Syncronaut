@@ -3,10 +3,10 @@ using Syncronaut.Server;
 
 namespace Syncronaut.Server.Services
 {
-    public class GreeterService : Syncronaut.SyncronautBase
+    public class SyncronautService : Syncronaut.SyncronautBase
     {
-        private readonly ILogger<GreeterService> _logger;
-        public GreeterService(ILogger<GreeterService> logger)
+        private readonly ILogger<SyncronautService> _logger;
+        public SyncronautService(ILogger<SyncronautService> logger)
         {
             _logger = logger;
         }
