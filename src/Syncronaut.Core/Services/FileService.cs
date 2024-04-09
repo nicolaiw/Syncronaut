@@ -37,6 +37,29 @@ public static class FileService
 
     public static IEnumerable<FileChunkInfo> GetFileChunkDiffs(IEnumerable<FileChunkInfo> originFileChunkInfos, ArraySegment<byte> destFileBytes)
     {
+        var firstOriginFileChunkInfo = originFileChunkInfos.FirstOrDefault();
+        
+        if (firstOriginFileChunkInfo == null)
+            return [];
+        
+        // TODO: Consider removing ChunkSize from FileChunkInfo
+        var chunkSize = firstOriginFileChunkInfo.ChunkSize;
+
+        var destFileChunkInfos = CalculateFileChunkInfos(destFileBytes, chunkSize);
+
+        if(originFileChunkInfos.Count() > destFileChunkInfos.Count())
+        {
+            // The file has become larger
+        }
+        else if(originFileChunkInfos.Count() < destFileChunkInfos.Count())
+        {
+            // The file has become smaller
+        }
+        else
+        {
+            // The file size has not changed
+        }
+
         throw new NotImplementedException();
     }
 
