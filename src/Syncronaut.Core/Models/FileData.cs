@@ -14,4 +14,10 @@ public class FileData
     public string FullName { get; private set; }
 
     public IEnumerable<FileChunkInfo> FileChunkInfos { get; private set; }
+
+    public FileData(string fullName, IEnumerable<FileChunkInfo> fileChunkInfos)
+    {
+        FullName = fullName;
+        FileChunkInfos = fileChunkInfos;
+    }
 }
